@@ -12,7 +12,8 @@ function! asyncomplete#sources#neosnippet#completor(opt, ctx)
         return
     endif
 
+    let l:matches = map(l:snips,'{"word":v:val["word"],"dup":1,"icase":1,"menu": "Snips: " . v:val["menu_abbr"]}')
     let l:startcol = l:col - l:kwlen
 
-    call asyncomplete#complete(a:opt['name'], a:ctx, l:startcol, l:snips)
+    call asyncomplete#complete(a:opt['name'], a:ctx, l:startcol, l:matches)
 endfunction
