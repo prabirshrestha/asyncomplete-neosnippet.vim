@@ -6,7 +6,7 @@ function! asyncomplete#sources#neosnippet#completor(opt, ctx)
     let l:col = a:ctx['col']
     let l:typed = a:ctx['typed']
 
-    let l:kw = matchstr(l:typed, '\v\S+$')
+    let l:kw = matchstr(l:typed, '\w\+$')
     let l:kwlen = len(l:kw)
     if l:kwlen < 1
         return
