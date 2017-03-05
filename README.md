@@ -17,11 +17,11 @@ Plug 'prabirshrestha/asyncomplete-neosnippet.vim'
 #### Registration
 
 ```vim
-call asyncomplete#register_source({
+call asyncomplete#register_source(asyncomplete#sources#neosnippet#get_source_options({
     \ 'name': 'neosnippet',
     \ 'whitelist': ['*'],
     \ 'completor': function('asyncomplete#sources#neosnippet#completor'),
-    \ })
+    \ }))
 ```
 
 To setup the snippet trigger refer to the neosnippet documentation. Here is an example:

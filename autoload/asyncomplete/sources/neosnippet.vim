@@ -1,3 +1,7 @@
+function! asyncomplete#sources#neosnippet#get_source_options(opts)
+    return a:opts
+endfunction
+
 function! asyncomplete#sources#neosnippet#completor(opt, ctx)
     let l:snips = values(neosnippet#helpers#get_completion_snippets())
 
@@ -8,9 +12,6 @@ function! asyncomplete#sources#neosnippet#completor(opt, ctx)
 
     let l:kw = matchstr(l:typed, '\w\+$')
     let l:kwlen = len(l:kw)
-    if l:kwlen < 1
-        return
-    endif
 
     let l:matches = map(l:snips,'{"word":v:val["word"],"dup":1,"icase":1,"menu": "Snips: " . v:val["menu_abbr"]}')
     let l:startcol = l:col - l:kwlen
