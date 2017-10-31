@@ -1,5 +1,8 @@
 function! asyncomplete#sources#neosnippet#get_source_options(opts)
-    return a:opts
+    let defaults={'name': 'neosnippet',
+                \ 'completor': function('asyncomplete#sources#neosnippet#completor'),
+                \ 'whitelist': ['*']}
+    return extend(defaults, a:opts)
 endfunction
 
 function! asyncomplete#sources#neosnippet#completor(opt, ctx)
