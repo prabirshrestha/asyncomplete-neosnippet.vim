@@ -16,7 +16,7 @@ function! asyncomplete#sources#neosnippet#completor(opt, ctx)
     let l:kw = matchstr(l:typed, '\w\+$')
     let l:kwlen = len(l:kw)
 
-    let l:matches = map(l:snips,'{"word":v:val["word"],"dup":1,"icase":1,"menu": "Snips: " . v:val["menu_abbr"]}')
+    let l:matches = map(l:snips,'{"word":v:val["word"],"dup":1,"icase":1,"menu": "[snip] " . v:val["menu_abbr"]}')
     let l:startcol = l:col - l:kwlen
 
     call asyncomplete#complete(a:opt['name'], a:ctx, l:startcol, l:matches)
