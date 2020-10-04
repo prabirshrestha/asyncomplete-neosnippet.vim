@@ -19,7 +19,7 @@ Plug 'prabirshrestha/asyncomplete-neosnippet.vim'
 ```vim
 call asyncomplete#register_source(asyncomplete#sources#neosnippet#get_source_options({
     \ 'name': 'neosnippet',
-    \ 'whitelist': ['*'],
+    \ 'allowlist': ['*'],
     \ 'completor': function('asyncomplete#sources#neosnippet#completor'),
     \ }))
 ```
