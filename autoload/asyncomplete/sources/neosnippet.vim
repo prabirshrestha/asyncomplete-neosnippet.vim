@@ -6,7 +6,7 @@ function! asyncomplete#sources#neosnippet#get_source_options(opts)
 endfunction
 
 function! asyncomplete#sources#neosnippet#completor(opt, ctx)
-    let l:snips = values(neosnippet#helpers#get_completion_snippets())
+    let l:snips = neosnippet#helpers#get_completion_snippets()
 
     let l:matches = []
 
